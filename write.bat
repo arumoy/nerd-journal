@@ -1,5 +1,5 @@
 @echo off
-for /f "tokens=1* delims=" %%a in ('date /T') do set today_folder=%%a
+for /f "tokens=1* delims= " %%a in ('date /T') do set today_folder=%%a
 mkdir %today_folder%
 
 REM Date generation start
@@ -33,5 +33,5 @@ for /f "tokens=1* delims=." %%t in ('echo %ss_ms_str%') do set ss_str=%%t
 set time_final=%timestr%:%ss_str% %tt_str%
 REM Time End
 
-echo # %datestr%, %time_final% > %today_folder%\README.md
+echo # %datestr%, %time_final% >> %today_folder%\README.md
 code %today_folder%\README.md
